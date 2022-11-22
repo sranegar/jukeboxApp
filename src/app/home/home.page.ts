@@ -12,25 +12,30 @@ import { Song } from '../models/song.interface';
 })
 export class HomePage implements OnInit {
   menuType: string = 'overlay';
+  public songs = [];
   songList: Observable<Song[]> = this.firestoreService.getSongs();
   constructor(private firestoreService: FirestoreService) {}
 
   ngOnInit() {
-    this.fetchSongs();
-    let songRes = this.songList;
-    songRes.subscribe(res => {
-     
-      res.forEach(song => {
-        let s = song;
-        s['$id'] = song.id;
-        (s as Song)
-      })
-    })
+    this.songList.subscribe((songs) => {
+      this.songs = songs;
+    });
+    // let songRes = this.songList;
+    
+    // songRes.subscribe(res => {
+    //   let songs = [];
+    //   res.forEach(song => {
+        
+    //     let s = song;
+    //     s['$id'] = song.id;
+    //     (s as Song)
+    //   })
+    // })
   }
 
   fetchSongs() {
-    this.songList.subscribe(res => {
-      console.log(res)
-    })
+    // this.songList.subscribe(res => {
+    //   console.log(res)
+    // })
   }
 }
