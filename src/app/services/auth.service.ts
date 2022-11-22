@@ -37,12 +37,12 @@ export class AuthService {
 
   async logout() {
     try {
-      const user = await this.auth;
-      return signOut(user);
+      return signOut(this.auth);
     } catch (e) {
       console.log(e.message);
       return null;
     }
   }
- 
+
+  userDetails() {}
 }

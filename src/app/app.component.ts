@@ -16,12 +16,8 @@ export class AppComponent {
   ) {}
 
   async logoutUser() {
-     
-
     await this.authService.logout();
-
-   
-      this.router.navigateByUrl('/login', { replaceUrl: true });
+      this.router.navigateByUrl('/login');
     
   }
 }
