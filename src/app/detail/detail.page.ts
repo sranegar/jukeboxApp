@@ -30,21 +30,23 @@ export class DetailPage implements OnInit {
   
   }
 
-  async deleteSong(id: string, name: string): Promise<void> {
-      const alert = await this.alertController.create({
-        message: `Are you sure you want to delete ${name}`,
+  async deleteSong(id: string, name: string, artist: string, file: string): Promise<void> {
+    const song = {id, name, artist, file}
+    const alert = await this.alertController.create({
+      
+        message: `Are you sure you want to delete ${name} by ${artist}?`,
         buttons: [
           {
             text: 'Cancel',
             role: 'cancel',
-            handler: (blah) => {
-              console.log('Confirm Cancel: blah');
+            handler: () => {
+              console.log(`Cancel deleting: ${name} by ${artist}`);
             },
           },
           {
             text: 'Okay',
             handler: () => {
-              this.firestoreService.deleteSong(id).then(() => {
+              this.firestoreService.deleteSong(song).then(() => {
                 this.router.navigateByUrl('/home');
               });
             },

@@ -34,8 +34,9 @@ export class FirestoreService {
      idField: 'id',
    }) as Observable<Song>; 
   }
-  deleteSong(id: string): Promise<void> {
-    const songDocRef = doc(this.firestore, `songs/${id}`);
+  deleteSong(song: Song): Promise<void> {
+    const songDocRef = doc(this.firestore, `songs/${song.id}`);
+   
     return deleteDoc(songDocRef);
   }
 }
