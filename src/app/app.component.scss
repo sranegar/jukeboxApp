@@ -1,0 +1,31 @@
+ion-menu::part(backdrop) {
+    background-color: rgba(0, 128, 255, 0.643);
+}
+
+ion-menu::part(container) {
+ 
+    box-shadow: 4px 0px 16px rgba(0, 149, 255, 0.18);
+}
+ 
+ion-title {
+    font-family: Poppins;
+}
+ 
+.logout {
+    font-family: PoppinsLight;
+    letter-spacing: 1px;
+}
+ 
+.list {
+    margin-top: 30px;
+    
+}
+
+.close-icon {
+    font-size: 24px;
+    position: absolute;
+    right: 20px;
+   top: 12px;
+    cursor: pointer;
+    z-index: 9999;
+}

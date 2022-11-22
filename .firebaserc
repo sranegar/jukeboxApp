@@ -1,0 +1,14 @@
+{
+  "targets": {
+    "n423-slr": {
+      "hosting": {
+        "app": [
+          "n423-slr"
+        ]
+      }
+    }
+  },
+  "projects": {
+    "default": "n423-slr"
+  }
+}

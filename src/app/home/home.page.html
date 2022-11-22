@@ -1,0 +1,57 @@
+
+ 
+ 
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-button>
+        <ion-icon slot="icon-only" name="arrow-back-outline"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+    <ion-buttons slot="end">
+    
+      <ion-menu-button menu="main-menu"></ion-menu-button>
+    </ion-buttons>
+  </ion-toolbar>
+  <div class="logo"><img src="../../assets/SVG/LOGO.svg" alt="Logo" /></div>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <!--Song List-->
+
+    <!--Header-->
+    <ion-item lines="full">
+      <ion-label>
+        <h1>Songs</h1>
+      </ion-label>
+      <ion-icon size="small" class="add-song-btn" name="add-circle-sharp" color="primary" (click)="addSong()"></ion-icon>
+    </ion-item>
+    <!--Item-->
+      <ion-list> 
+    <ion-items-sliding>
+      <ion-item>
+        <ion-icon name="play-circle" slot="start"></ion-icon>
+        <ion-label>
+          <h2>Time > Breathe (Reprise)</h2>
+          <p>Greensky Bluegrass</p>
+        </ion-label>
+      </ion-item>
+      <ion-item-options side="end">
+        <ion-item-option>Edit</ion-item-option>
+        <ion-item-option color="danger">Delete</ion-item-option>
+      </ion-item-options>
+    </ion-items-sliding>
+   
+    <ion-item href="#">
+      <ion-icon name="play-circle" slot="start"></ion-icon>
+      <ion-label>
+        <h2>Bird in a House</h2>
+        <p>Railroad Earth</p>
+      </ion-label>
+    </ion-item>
+    </ion-list>
+  <!-- <ion-button (click)="printCurrentPosition()">Get Location</ion-button>
+ <ion-button (click)="hapticsVibrate()">Haptics</ion-button> -->
+</ion-content>
+ 
+ 

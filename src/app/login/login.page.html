@@ -1,0 +1,35 @@
+ 
+
+<ion-content class="ion-padding">
+  <div class="logo"><img src="../../assets/SVG/LOGO.svg" alt="Logo" /></div>
+ 
+  <form (ngSubmit)="login()" [formGroup]="credentials">
+    <p>Login</p>
+    <ion-item fill="solid" class="ion-margin-bottom">
+      <ion-input
+        type="email"
+        placeholder="Email..."
+        formControlName="email"
+      ></ion-input>
+      <ion-note
+        slot="error"
+        *ngIf="(email.dirty || email.touched) && email.errors"
+        >Email is invalid!</ion-note
+      >
+    </ion-item>
+    <ion-item fill="solid" class="ion-margin-bottom">
+      <ion-input
+        type="password"
+        placeholder="Password..."
+        formControlName="password"
+      ></ion-input>
+      <ion-note
+        slot="error"
+        *ngIf="(password.dirty || password.touched) && password.errors"
+        >Password needs to be minimum of 8 characters and max of 24!</ion-note
+      >
+    </ion-item>
+    <ion-button type="submit" expand="block" [disabled]="!credentials.value">Log In</ion-button>
+  <ion-button button type="button" expand="block" color="secondary" (click)="register()">Create Account</ion-button>
+  </form>
+</ion-content>
