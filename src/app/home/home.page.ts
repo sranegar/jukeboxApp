@@ -18,6 +18,7 @@ export class HomePage implements OnInit {
   ngOnInit() {
     this.songList.subscribe((songs) => {
       this.songs = songs;
+ 
     });
   }
 

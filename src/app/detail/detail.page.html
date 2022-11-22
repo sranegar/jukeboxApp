@@ -1,9 +1,29 @@
 <ion-header>
   <ion-toolbar>
-    <ion-title>detail</ion-title>
+    <ion-buttons slot="start">
+      <ion-button routerLink="/home" routerDirection="backward">
+        <ion-icon slot="icon-only" name="arrow-back-outline"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+    <ion-buttons slot="end">
+
+      <ion-menu-button menu="main-menu"></ion-menu-button>
+    </ion-buttons>
   </ion-toolbar>
+  <div class="logo"><img src="../../assets/SVG/LOGO.svg" alt="Logo" /></div>
 </ion-header>
 
 <ion-content>
 
+    <ion-item>
+      <ion-icon name="play-circle" slot="start"></ion-icon>
+      <ion-label>
+        <h2>{{song.name}}</h2>
+        <p>{{song.artist}}</p>
+      </ion-label>
+    </ion-item>
+ 
+ 
+
+<ion-button expand="block" (click)="deleteSong()"> DELETE SONG </ion-button>
 </ion-content>

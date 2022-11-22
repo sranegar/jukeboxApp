@@ -1,0 +1,52 @@
+ion-title {
+    --color: rgb(121, 121, 121);
+    font-size: 18px;
+    padding: 20px 10px;
+    text-align: center;
+    text-transform: uppercase;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+ion-list-header {
+    background-image: linear-gradient(-90deg,
+            #ff53c8,
+
+            #6e57f3);
+    text-transform: uppercase;
+    border-radius: 10px;
+
+    ion-label {
+        font-size: 18px;
+        font-family: PoppinsMed;
+        font-weight: 600;
+        letter-spacing: 1px;
+    }
+}
+
+ion-header {
+
+    margin-bottom: 40px;
+
+    ion-toolbar {
+
+        display: flex;
+
+        ion-button {
+            float: right;
+
+        }
+    }
+
+    .logo {
+        margin-top: 40px;
+        height: 100px;
+        display: flex;
+        justify-content: center;
+
+
+        img {
+            max-height: 100%;
+
+        }
+    }
+}
