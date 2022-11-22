@@ -1,6 +1,3 @@
-
- 
- 
 <ion-header>
   <ion-toolbar>
     <ion-buttons slot="start">
@@ -9,7 +6,7 @@
       </ion-button>
     </ion-buttons>
     <ion-buttons slot="end">
-    
+
       <ion-menu-button menu="main-menu"></ion-menu-button>
     </ion-buttons>
   </ion-toolbar>
@@ -18,33 +15,31 @@
 
 <ion-content [fullscreen]="true">
   <!--Song List-->
- 
-    <!--Header-->
-    <ion-item lines="full">
+
+  <!--Header-->
+  <ion-item lines="full">
+    <ion-label>
+      <h1>Songs</h1>
+    </ion-label>
+    <ion-buttons>
+      <ion-button routerLink="/create">
+        <ion-icon  class="add-song-btn" name="add-circle-sharp" color="primary"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+  </ion-item>
+
+  <!--Item-->
+  <ion-list>
+    <ion-item *ngFor="let song of songs" routerLink="/detail/{{song.id}}" routerDirection="forward">
+      <ion-icon name="play-circle" slot="start"></ion-icon>
       <ion-label>
-        <h1>Songs</h1>
+        <h2>{{song.name}}</h2>
+        <p>{{song.artist}}</p>
       </ion-label>
-     <ion-button routerLink="/create">
-      <ion-icon size="small" class="add-song-btn" name="add-circle-sharp" color="primary"  ></ion-icon></ion-button>
     </ion-item>
-    
-    <!--Item-->
-      <ion-list> 
-        <!-- <ion-item *ngFor="let song of songs"
-        routerLink="/details/{{song.id}}"
-        routerDirection="forward"></ion-item> -->
-      <ion-item *ngFor="let song of songs" routerLink="/detail/{{song.id}}" routerDirection="forward" >
-        <ion-icon name="play-circle" slot="start"></ion-icon>
-        <ion-label>
-          <h2>{{song.name}}</h2>
-          <p>{{song.artist}}</p>
-        </ion-label>
-      </ion-item>
-      <!-- <ion-item-options side="end">
+    <!-- <ion-item-options side="end">
         <ion-item-option>Edit</ion-item-option>
         <ion-item-option color="danger">Delete</ion-item-option>
       </ion-item-options> -->
-    </ion-list>
+  </ion-list>
 </ion-content>
- 
- 
