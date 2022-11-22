@@ -22,8 +22,8 @@
         <p>{{song.artist}}</p>
       </ion-label>
     </ion-item>
- 
- 
-
-<ion-button expand="block" (click)="deleteSong(song.id, song.name, song.artist, song.file)">DELETE SONG </ion-button>
+    <ion-buttons class="details-btns-wrapper">
+<ion-button slot="start" color="secondary" (click)="deleteSong(song.id, song.name, song.artist, song.file)">Edit</ion-button>
+<ion-button slot="end" color="danger" (click)="deleteSong(song.id, song.name, song.artist, song.file)">Remove</ion-button>
+</ion-buttons>
 </ion-content>
