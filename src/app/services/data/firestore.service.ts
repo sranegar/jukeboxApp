@@ -17,7 +17,7 @@ import { Song } from '../../models/song.interface';
   providedIn: 'root',
 })
 export class FirestoreService {
-  constructor(private readonly firestore: Firestore) {}
+  constructor(private firestore: Firestore) {}
 
   createSong(song: Song) {
     const songsRef = collection(this.firestore, 'songs');
@@ -29,8 +29,10 @@ export class FirestoreService {
     return collectionData(songsRef, { idField: 'id' }) as Observable<Song[]>;
   }
   getSongDetail(id: string): Observable<Song> {
-    const songRef = doc(this.firestore, `songs/${id}`);
-    return docData(songRef, { idField: 'id' }) as Observable<Song>;
+   const songRef = doc(this.firestore, `songs/${id}`);
+   return docData(songRef, {
+     idField: 'id',
+   }) as Observable<Song>; 
   }
   deleteSong(id: string): Promise<void> {
     const songDocRef = doc(this.firestore, `songs/${id}`);

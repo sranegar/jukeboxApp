@@ -30,7 +30,7 @@
 
   <!--Item-->
   <ion-list>
-    <ion-item *ngFor="let song of songs" routerLink="/detail/{{song.id}}" routerDirection="forward">
+    <ion-item *ngFor="let song of songList | async" routerLink="/detail/{{song.id}}">
       <ion-icon name="play-circle" slot="start"></ion-icon>
       <ion-label>
         <h2>{{song.name}}</h2>

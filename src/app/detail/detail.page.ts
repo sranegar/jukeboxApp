@@ -10,7 +10,7 @@ import { FirestoreService } from '../services/data/firestore.service';
   styleUrls: ['./detail.page.scss'],
 })
 export class DetailPage implements OnInit {
-  song: Song;
+  public song = {};
   constructor(
     private firestoreService: FirestoreService,
     private route: ActivatedRoute,
@@ -19,11 +19,15 @@ export class DetailPage implements OnInit {
   ) {}
 
   ngOnInit() {
-    const songId: string = this.route.snapshot.paramMap.get('id');
-
-    this.firestoreService.getSongDetail(songId).subscribe((song) => {
+    const songId = this.route.snapshot.paramMap.get('id');
+   
+    
+    this.song = this.firestoreService.getSongDetail(songId);
+    this.firestoreService.getSongDetail(songId).subscribe(song => {
       this.song = song;
-    });
+    })
+ 
+  
   }
 
   async deleteSong(id: string, name: string): Promise<void> {
