@@ -37,8 +37,19 @@ export class AuthService {
   }
 
   logout() {
-    return signOut(this.auth);
+      try {
+      console.log('Logged out');
+        return signOut(this.auth);  
+      } catch (e) {
+        console.log(e.message);
+        return null;
+      }
+    
   }
 
   
+
+  userDetails() {
+     
+  }
 }

@@ -3,16 +3,16 @@
     <ion-menu menuId="main-menu" content-id="main"   side="end" type="overlay">
        
      <ion-header>
-      <ion-toolbar color="primary"><ion-title>Menu</ion-title><ion-menu-toggle>
+      <ion-toolbar color="primary"><ion-title>Menu</ion-title>
      
-      </ion-menu-toggle></ion-toolbar>
+       </ion-toolbar>
       
      </ion-header>
       <ion-content class="ion-padding">
         <ion-list class="list">
-          <ion-item href="#">
+          <ion-item class="logout" (click)="logoutUser()">
             <ion-icon size="large" name="person-circle-sharp" slot="start"></ion-icon>
-            <ion-label class="logout">Logout</ion-label>
+          <ion-menu-toggle><ion-label class="logout">Logout</ion-label></ion-menu-toggle>
           </ion-item>
         </ion-list>
      

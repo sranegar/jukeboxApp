@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
+import { Router, ActivatedRoute } from '@angular/router';
 import { FormGroup, FormBuilder } from '@angular/forms';
+
 import { SongsService } from './../shared/songs.service';
 
 @Component({
@@ -13,6 +14,7 @@ export class AddSongPage implements OnInit {
   constructor(
     private songService: SongsService,
     private router: Router,
+    private route: ActivatedRoute,
     public fb: FormBuilder
   ) { }
 

@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
-import { Geolocation } from '@capacitor/geolocation';
-import {Haptics, ImpactStyle} from '@capacitor/haptics';
+import { Router } from '@angular/router';
+
 
 @Component({
   selector: 'app-home',
@@ -11,13 +11,10 @@ export class HomePage {
   menuType: string = 'overlay';
   constructor() {}
 
-   
- 
-  logout() {
-    console.log('logout clicked');
-  }
 
-  addSong() {
+
+  addBtn() {
+   
     console.log('add song clicked');
   }
 }
