@@ -26,9 +26,14 @@ const routes: Routes = [
     path: '**',
     redirectTo: '',
     pathMatch: 'full',
-  },  {
-    path: 'add-song',
-    loadChildren: () => import('./add-song/add-song.module').then( m => m.AddSongPageModule)
+  },
+  {
+    path: 'create',
+    loadChildren: () => import('./create/create.module').then( m => m.CreatePageModule)
+  },
+  {
+    path: 'detail/:id',
+    loadChildren: () => import('./detail/detail.module').then( m => m.DetailPageModule)
   },
 
   

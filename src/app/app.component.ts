@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
-import { AlertController, LoadingController } from '@ionic/angular';
+import { LoadingController } from '@ionic/angular';
 import { AuthService } from './services/auth.service';
 
 @Component({
@@ -10,24 +10,18 @@ import { AuthService } from './services/auth.service';
 })
 export class AppComponent {
   constructor(
-    private loadingController: LoadingController,
-    private alertController: AlertController,
     private authService: AuthService,
+    private loadingController: LoadingController,
     private router: Router
   ) {}
 
-  ngOnInit() {
-  this.authService.userDetails()
-  }
-  
- logoutUser() {
-   this.authService.logout()
-    .then(res => {
-      console.log(res);
-      this.router.navigateByUrl('/login', {replaceUrl: true})
-    })
-      .catch(error => {
-      console.log(error)
-    })
+  async logoutUser() {
+     
+
+    await this.authService.logout();
+
+   
+      this.router.navigateByUrl('/login', { replaceUrl: true });
+    
   }
 }

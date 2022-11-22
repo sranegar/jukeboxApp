@@ -5,14 +5,13 @@ import {
   createUserWithEmailAndPassword,
   signOut,
 } from '@angular/fire/auth';
- 
 
 @Injectable({
   providedIn: 'root',
 })
 export class AuthService {
   constructor(private auth: Auth) {}
- 
+
   async register({ email, password }) {
     try {
       const user = await createUserWithEmailAndPassword(
@@ -36,20 +35,14 @@ export class AuthService {
     }
   }
 
-  logout() {
-      try {
-      console.log('Logged out');
-        return signOut(this.auth);  
-      } catch (e) {
-        console.log(e.message);
-        return null;
-      }
-    
+  async logout() {
+    try {
+      const user = await this.auth;
+      return signOut(user);
+    } catch (e) {
+      console.log(e.message);
+      return null;
+    }
   }
-
-  
-
-  userDetails() {
-     
-  }
+ 
 }
