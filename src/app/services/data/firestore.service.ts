@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { idToken } from '@angular/fire/auth';
- 
+
 import {
   addDoc,
   collection,
@@ -29,14 +29,14 @@ export class FirestoreService {
     return collectionData(songsRef, { idField: 'id' }) as Observable<Song[]>;
   }
   getSongDetail(id: string): Observable<Song> {
-   const songRef = doc(this.firestore, `songs/${id}`);
-   return docData(songRef, {
-     idField: 'id',
-   }) as Observable<Song>; 
+    const songRef = doc(this.firestore, `songs/${id}`);
+    return docData(songRef, {
+      idField: 'id',
+    }) as Observable<Song>;
   }
   deleteSong(song: Song): Promise<void> {
     const songDocRef = doc(this.firestore, `songs/${song.id}`);
-   
+
     return deleteDoc(songDocRef);
   }
 }
