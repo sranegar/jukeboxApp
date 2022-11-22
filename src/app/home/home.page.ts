@@ -3,7 +3,6 @@ import { Observable } from 'rxjs';
 import { FirestoreService } from '../services/data/firestore.service';
 import { Song } from '../models/song.interface';
  
- 
 
 @Component({
   selector: 'app-home',
@@ -20,22 +19,6 @@ export class HomePage implements OnInit {
     this.songList.subscribe((songs) => {
       this.songs = songs;
     });
-    // let songRes = this.songList;
-    
-    // songRes.subscribe(res => {
-    //   let songs = [];
-    //   res.forEach(song => {
-        
-    //     let s = song;
-    //     s['$id'] = song.id;
-    //     (s as Song)
-    //   })
-    // })
   }
 
-  fetchSongs() {
-    // this.songList.subscribe(res => {
-    //   console.log(res)
-    // })
-  }
 }

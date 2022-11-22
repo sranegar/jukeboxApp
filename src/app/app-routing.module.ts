@@ -22,11 +22,11 @@ const routes: Routes = [
       import('./home/home.module').then((m) => m.HomePageModule),
       ...canActivate(redirectUnauthorizedToLogin)
   },
-  {
-    path: '**',
-    redirectTo: '',
-    pathMatch: 'full',
-  },
+  // {
+  //   path: '**',
+  //   redirectTo: '',
+  //   pathMatch: 'full',
+  // },
   {
     path: 'create',
     loadChildren: () => import('./create/create.module').then( m => m.CreatePageModule)
