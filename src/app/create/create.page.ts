@@ -27,25 +27,26 @@ export class CreatePage implements OnInit {
 
   ngOnInit() {}
 
-  async createSong() {
+  async createSong(song) {
     const loading = await this.loadingCtrl.create();
 
-    const songName = this.createSongForm.value.songName;
-    const artistName = this.createSongForm.value.artistName;
-    const fileName = this.createSongForm.value.fileName;
+    const name = this.createSongForm.value.songName;
+    const artist = this.createSongForm.value.artistName;
+    const file = this.createSongForm.value.fileName;
+    song = { name, artist, file };
 
-    // this.firestoreService.createSong(songName, artistName, fileName).then(
-    //   () => {
-    //     loading.dismiss().then(() => {
-    //       this.router.navigateByUrl('/home');
-    //     });
-    //   },
-    //   (error) => {
-    //     loading.dismiss().then(() => {
-    //       console.error(error);
-    //     });
-    //   }
-    // );
+    this.firestoreService.createSong(song).then(
+      () => {
+        loading.dismiss().then(() => {
+          this.router.navigateByUrl('/home');
+        });
+      },
+      (error) => {
+        loading.dismiss().then(() => {
+          console.error(error);
+        });
+      }
+    );
 
     return await loading.present();
   }
