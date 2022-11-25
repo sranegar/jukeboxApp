@@ -24,6 +24,7 @@ ion-list-header {
   font-family: PoppinsMed;
   font-weight: 600;
   letter-spacing: 1px;
+ 
  }
 }
 
@@ -58,7 +59,7 @@ ion-header {
 ion-icon {
   height: 36px;
   width: 36px;
-  
+  cursor: pointer;
 }
 
 .add-song-btn {
@@ -72,6 +73,9 @@ ion-list {
 
   ion-label {
     font-family: PoppinsLight;
+      cursor: pointer;
+
+     
   }
 }
 
@@ -79,4 +83,47 @@ ion-button {
   margin-right: 20px;
 }
 
+ion-footer {
+  ion-toolbar {
+    ion-row {
+
+  
+          .progress-bar {
+            background-color: rgb(48, 48, 48);
+            border-radius: 30px;
+            margin: 0 auto;
+            padding: 0px 10px;
+          }
+          .active-title-text {
+            margin: 0;
+            padding: 15px;
+            font-size: 18px;
+            font-family: PoppinsReg;
+          }
+          .active-artist-text {
+            margin: 0;
+            padding: 0;
+            font-weight: lighter;
+            font-family: PoppinsLight;
+            margin-top: -24px;
+            padding-bottom: 5px;
+            color: #989898;
+          }
+          .player-btns-container {
+            
+                margin: 0 auto;
+                padding: 10px;
+                ion-button {
+                  ion-icon {
+                    height: 30px;
+                    width: 30px;
+                  }
+                }
+          }
+       
+    }
+  }
+}
+ 
+ 
  
