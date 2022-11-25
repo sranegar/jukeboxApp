@@ -9,6 +9,7 @@ import {
   docData,
   doc,
   deleteDoc,
+  updateDoc,
 } from '@angular/fire/firestore';
 import { Observable } from 'rxjs';
 import { Song } from '../../models/song.interface';
@@ -38,5 +39,10 @@ export class FirestoreService {
     const songDocRef = doc(this.firestore, `songs/${song.id}`);
 
     return deleteDoc(songDocRef);
+  }
+  updateSong(id, song: Song) {
+    const songsRef = doc(this.firestore, `songs/${id}`)
+    return updateDoc(songsRef, {name: song.name, artist: song.artist, file: song.file})
+    
   }
 }

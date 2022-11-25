@@ -1,0 +1,46 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-button routerLink="/home" routerDirection="backward">
+        <ion-icon slot="icon-only" name="arrow-back-outline"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+    <ion-buttons slot="end">
+
+      <ion-menu-button menu="main-menu"></ion-menu-button>
+    </ion-buttons>
+  </ion-toolbar>
+  <div class="logo"><img src="../../assets/SVG/LOGO.svg" alt="Logo" /></div>
+</ion-header>
+
+<ion-content>
+ 
+    <form [formGroup]="updateSongForm" (ngSubmit)="updateForm()">
+      <!--Header-->
+      <ion-item lines="full">
+        <ion-label>
+          <h2>Edit Song</h2>
+        </ion-label>
+      </ion-item>
+
+      <ion-item>
+        <ion-label position="stacked">Song Name</ion-label>
+        <ion-input formControlName="name" type="text" required></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-label position="stacked">Artist Name</ion-label>
+        <ion-input formControlName="artist" type="text"></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-label position="stacked">Song File</ion-label>
+        <ion-input formControlName="file" type="text"></ion-input>
+      </ion-item>
+
+      <ion-button class="edit-btn" expand="block" type="submit" [disabled]="!updateSongForm.valid">
+        Update Song
+      </ion-button>
+    </form>
+ 
+</ion-content>

@@ -23,7 +23,7 @@
       </ion-label>
     </ion-item>
     <ion-buttons class="details-btns-wrapper">
-<ion-button slot="start" color="secondary" (click)="deleteSong(song.id, song.name, song.artist, song.file)">Edit</ion-button>
+<ion-button slot="start" color="secondary" [routerLink]="['/edit/', song.id]">Edit</ion-button>
 <ion-button slot="end" color="danger" (click)="deleteSong(song.id, song.name, song.artist, song.file)">Remove</ion-button>
 </ion-buttons>
 </ion-content>
