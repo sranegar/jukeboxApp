@@ -1,6 +1,6 @@
 <ion-header>
   <ion-toolbar>
- 
+
     <ion-buttons slot="start">
       <ion-button routerLink="/create">
         <ion-icon slot="icon-only" name="add"></ion-icon>
@@ -10,63 +10,73 @@
 
       <ion-menu-button menu="main-menu"></ion-menu-button>
     </ion-buttons>
-    
+
   </ion-toolbar>
- 
+
 </ion-header>
 
-<ion-content >
- <div class="logo"><img src="assets/SVG/LOGO.svg" alt="Logo"></div>
- 
-  
+<ion-content>
+  <div class="logo"><img src="assets/SVG/LOGO.svg" alt="Logo"></div>
+
+
   <!--Item-->
   <ion-list>
-    
+
     <ion-list-header>
       <ion-label>
         Songs Library
       </ion-label>
+
     </ion-list-header>
-    <ion-item *ngFor="let song of songList | async">
-      <ion-icon class="play-button" slot="start" (click)="start(song)" [name]="song == activeSong ? 'play-circle' : 'play-circle-outline'"
-        [style.color]="song == activeSong ? '#2fdf75' : '#989898'" ></ion-icon>
-      <ion-label routerLink="/detail/{{song.id}}">
-        <h2 [style.color]="song == activeSong ? '#2fdf75' : 'white'"
-          [style.font-weight]="song == activeSong ? '900' : '300'">{{song.name}}</h2>
-        <p>{{song.artist}}</p>
-      </ion-label>
-    </ion-item>
-    <!-- <ion-item-options side="end">
-        <ion-item-option>Edit</ion-item-option>
-        <ion-item-option color="danger">Delete</ion-item-option>
-      </ion-item-options> -->
+    <ion-item-sliding *ngFor="let song of songList | async">
+      
+     
+
+      <ion-item >
+        <ion-icon class="play-button" slot="start" (click)="start(song)"
+          [name]="song == activeSong ? 'play-circle' : 'play-circle-outline'"
+          [style.color]="song == activeSong ? '#2fdf75' : '#989898'"></ion-icon>
+        <ion-label>
+          <h2 [style.color]="song == activeSong ? '#2fdf75' : 'white'"
+            [style.font-weight]="song == activeSong ? '900' : '300'">{{song.name}}</h2>
+          <p>{{song.artist}}</p>
+        </ion-label>
+         
+      </ion-item>
+          <ion-item-options side="end">
+            <ion-item-option class="ion-item" routerLink="/detail/{{song.id}}">View</ion-item-option>
+           
+          </ion-item-options>
+    </ion-item-sliding>
+
   </ion-list>
 </ion-content>
 
 
 
 <ion-footer>
-  <ion-toolbar >
+  <ion-toolbar>
     <ion-row>
       <ion-col size="12" class="ion-text-center">
- 
-         <h2 class="active-title-text">{{activeSong ? activeSong.name : undefined}}</h2>
+
+        <h2 class="active-title-text">{{activeSong ? activeSong.name : undefined}}</h2>
       </ion-col>
       <ion-col size="12" class="ion-text-center">
         <p class="active-artist-text">{{activeSong ? activeSong.artist : null}}</p>
       </ion-col>
-      <ion-col class="ion-text-center progress-bar" size="8" >
-        <ion-range #range [(ngModel)]="progress" max="100" color="secondary" (touchend)="seek()" (mouseup)="seek()" [pin]="true"></ion-range>
+      <ion-col class="ion-text-center progress-bar" size="8">
+        <ion-range #range [(ngModel)]="progress" max="100" color="secondary" (touchend)="seek()" (mouseup)="seek()"
+          [pin]="true"></ion-range>
       </ion-col>
-    
+
       <ion-col size="12" class="ion-text-center player-btns-container">
         <ion-button fill="clear" (click)="prev()" color="light">
           <ion-icon name="play-skip-back-outline" color="dark"></ion-icon>
         </ion-button>
-        <ion-button fill="clear" (click)="togglePlayer(false)" *ngIf="!isPlaying" >
-          <ion-icon slot="icon-only" name="play" ></ion-icon>
+        <ion-button fill="clear" (click)="togglePlayer(false)" *ngIf="!isPlaying">
+          <ion-icon slot="icon-only" name="play"></ion-icon>
         </ion-button>
-        <ion-button fill="clear" (click)="togglePlayer(true)" *ngIf="isPlaying"  >
+        <ion-button fill="clear" (click)="togglePlayer(true)" *ngIf="isPlaying">
           <ion-icon slot="icon-only" name="pause-outline"></ion-icon>
         </ion-button>
         <ion-button fill="clear" (click)="next()" color="light">

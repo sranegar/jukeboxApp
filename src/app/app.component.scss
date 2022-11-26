@@ -7,9 +7,9 @@ ion-menu::part(container) {
 }
 
 ion-title {
-    --color: rgb(255, 255, 255);
-    text-transform: uppercase;
-    font-family: Poppins;
+    --color: rgb(255, 255, 255) !important;
+    text-transform: uppercase !important;
+    font-family: Poppins !important;
 }
 
 ion-content {

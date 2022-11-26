@@ -15,7 +15,7 @@
 </ion-header>
 
 <ion-content>
-  <h3>Song Details</h3>
+  <h3 class="form-header">Song Details</h3>
     <ion-item>
      
       <ion-label position="stacked">
@@ -45,7 +45,7 @@
       <ion-input placeholder="{{song.file}}"></ion-input>
     </ion-item>
     <ion-buttons class="details-btns-wrapper">
-<ion-button slot="start" color="secondary" [routerLink]="['/edit/', song.id]">Edit</ion-button>
-<ion-button slot="end" color="danger" (click)="deleteSong(song.id, song.name, song.artist, song.file)">Remove</ion-button>
+<ion-button class='detail-button-text' slot="start" color="secondary" [routerLink]="['/edit/', song.id]">Edit</ion-button>
+<ion-button class="detail-button-text" slot="end" color="danger" (click)="deleteSong(song.id, song.name, song.artist, song.file)">Remove</ion-button>
 </ion-buttons>
 </ion-content>

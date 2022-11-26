@@ -2,9 +2,9 @@ ion-title {
     --color: rgb(121, 121, 121);
     
     
-        text-align: center;
-        text-transform: uppercase;
-        font-family: Poppins;
+        text-align: center !important;
+        text-transform: uppercase !important;
+        font-family: Poppins !important;
 }
 
  ion-header {
@@ -18,7 +18,7 @@ form {
     margin: 0 auto;
     padding: 0px;
 
-    h3 {
+    .form-header {
         text-transform: uppercase;
         text-align: center;
         font-size: 20px;

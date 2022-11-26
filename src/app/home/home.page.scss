@@ -75,20 +75,13 @@ ion-list {
   margin: 5px;
   padding: 5px;
   
-  ion-label {
-    font-family: PoppinsLight;
-    cursor: pointer;
-
-    h2 {
-      font-size: 14px;
-    }
-
-    p {
-      font-size: 13px;
-    }
-  }
-}
  
+}
+ .ion-item {
+  font-family: Poppins;
+  font-variant-caps: all-petite-caps;
+  font-size: 20px;
+ }
 ion-footer {
  
 

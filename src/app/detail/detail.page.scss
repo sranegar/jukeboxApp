@@ -3,8 +3,8 @@ ion-title {
 
 
     text-align: center;
-    text-transform: uppercase;
-    font-family: Poppins;
+    text-transform: uppercase !important;
+    font-family: Poppins !important;
 }
 
  ion-header {
@@ -14,7 +14,7 @@ ion-title {
  }
 
 ion-content {
-    h3 {
+.form-header {
             text-transform: uppercase;
             text-align: center;
             font-size: 20px;
@@ -45,7 +45,7 @@ ion-content {
      
     justify-content: space-between;
 }
-ion-button {
+.detail-button-text {
     margin-right: 20px;
     font-family: Poppins;
 }
