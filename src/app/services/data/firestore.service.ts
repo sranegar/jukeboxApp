@@ -1,6 +1,17 @@
 import { Injectable } from '@angular/core';
 import { idToken } from '@angular/fire/auth';
-
+import {
+  
+  ref,
+  deleteObject,
+  uploadBytes,
+  uploadString,
+  uploadBytesResumable,
+  percentage,
+  getDownloadURL,
+  Storage,
+  
+} from '@angular/fire/storage';
 import {
   addDoc,
   collection,
@@ -11,7 +22,7 @@ import {
   deleteDoc,
   updateDoc,
 } from '@angular/fire/firestore';
-
+ 
 import { Observable } from 'rxjs';
 import { Song } from '../../models/song.interface';
  
@@ -20,9 +31,8 @@ import { Song } from '../../models/song.interface';
 })
 export class FirestoreService {
  
-  constructor(private firestore: Firestore ) {}
+  constructor(private firestore: Firestore, private storage: Storage ) {}
 
-  
  
   createSong(song: Song) {
     const songsRef = collection(this.firestore, 'songs');
