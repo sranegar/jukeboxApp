@@ -1,7 +1,8 @@
 <ion-header>
   <ion-toolbar>
+      <ion-title>Edit Song</ion-title>
     <ion-buttons slot="start">
-      <ion-button routerLink="/home" routerDirection="backward">
+      <ion-button (click)="navigateBack()">
         <ion-icon slot="icon-only" name="arrow-back-outline"></ion-icon>
       </ion-button>
     </ion-buttons>
@@ -10,18 +11,14 @@
       <ion-menu-button menu="main-menu"></ion-menu-button>
     </ion-buttons>
   </ion-toolbar>
-  <div class="logo"><img src="../../assets/SVG/LOGO.svg" alt="Logo" /></div>
+ 
 </ion-header>
 
 <ion-content>
  
     <form [formGroup]="updateSongForm" (ngSubmit)="updateForm()">
       <!--Header-->
-      <ion-item lines="full">
-        <ion-label>
-          <h2>Edit Song</h2>
-        </ion-label>
-      </ion-item>
+        <h3>Edit Details</h3>
 
       <ion-item>
         <ion-label position="stacked">Song Name</ion-label>

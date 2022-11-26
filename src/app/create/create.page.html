@@ -1,5 +1,6 @@
 <ion-header>
   <ion-toolbar>
+    <ion-title>Add Song</ion-title>
     <ion-buttons slot="start">
       <ion-button routerLink="/home" routerDirection="backward">
         <ion-icon slot="icon-only" name="arrow-back-outline"></ion-icon>
@@ -10,34 +11,32 @@
       <ion-menu-button menu="main-menu"></ion-menu-button>
     </ion-buttons>
   </ion-toolbar>
-  <div class="logo"><img src="../../assets/SVG/LOGO.svg" alt="Logo" /></div>
+ 
 </ion-header>
 
-<ion-content padding>
-  <form [formGroup]="createSongForm" (submit)="createSong()">
+<ion-content>
+  <form [formGroup]="createSongForm" (submit)="createSong()" class="add-song-form">
       <!--Header-->
-      <ion-item lines="full">
-        <ion-label>
-          <h2>Add Song</h2>
-        </ion-label>
-      </ion-item>
+     
+          <h3>Enter Details</h3>
+    
 
     <ion-item>
-      <ion-label position="stacked">Song Name</ion-label>
+      <ion-label position="floating">Song Title</ion-label>
       <ion-input formControlName="songName" type="text" placeholder="What's the name of the song?">
       </ion-input>
     </ion-item>
 
     <ion-item>
-      <ion-label position="stacked">Artist Name</ion-label>
-      <ion-input formControlName="artistName" type="text" placeholder="Who is the artist?">
+      <ion-label position="floating">Artist Name</ion-label>
+      <ion-input formControlName="artistName" type="text" placeholder="Who is the creator of this song?">
       </ion-input>
     </ion-item>
 
    
     <ion-item>
-      <ion-label position="stacked">Song File</ion-label>
-      <ion-input formControlName="fileName" type="text" placeholder=".mp3">
+      <ion-label position="floating">File (.mp3)</ion-label>
+      <ion-input formControlName="fileName" type="text"  placeholder="Enter file path">
       </ion-input>
     </ion-item>
 
@@ -45,4 +44,6 @@
       Add Song
     </ion-button>
   </form>
+ 
+  
 </ion-content>

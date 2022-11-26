@@ -1,5 +1,6 @@
 <ion-header>
   <ion-toolbar>
+    <ion-title>Details</ion-title>
     <ion-buttons slot="start">
       <ion-button routerLink="/home" routerDirection="backward">
         <ion-icon slot="icon-only" name="arrow-back-outline"></ion-icon>
@@ -10,17 +11,31 @@
       <ion-menu-button menu="main-menu"></ion-menu-button>
     </ion-buttons>
   </ion-toolbar>
-  <div class="logo"><img src="../../assets/SVG/LOGO.svg" alt="Logo" /></div>
+ 
 </ion-header>
 
 <ion-content>
-
+  <h3>Song Details</h3>
     <ion-item>
-      <ion-icon name="play-circle" slot="start"></ion-icon>
-      <ion-label>
-        <h2>{{song.name}}</h2>
-        <p>{{song.artist}}</p>
+     
+      <ion-label position="stacked">
+         Song Title
       </ion-label>
+      <ion-input placeholder="{{song.name}}"></ion-input>
+    </ion-item>
+    <ion-item>
+     
+      <ion-label position="stacked">
+         Artist Name
+      </ion-label>
+      <ion-input placeholder="{{song.artist}}"></ion-input>
+    </ion-item>
+    <ion-item>
+     
+      <ion-label position="stacked">
+        File Path
+      </ion-label>
+      <ion-input placeholder="{{song.file}}"></ion-input>
     </ion-item>
     <ion-buttons class="details-btns-wrapper">
 <ion-button slot="start" color="secondary" [routerLink]="['/edit/', song.id]">Edit</ion-button>

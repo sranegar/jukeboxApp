@@ -2,128 +2,147 @@ ion-content {
   position: relative;
 }
 
-ion-title {
-  --color: rgb(121, 121, 121);
-  font-size: 18px;
-  padding: 20px 10px;
-  text-align: center;
-  text-transform: uppercase;
-  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
-}
+ 
+ 
+ 
 
 ion-list-header {
-  background-image: linear-gradient(-90deg,
-      #ff53c8,
-      
-      #6e57f3);
-  text-transform: uppercase;
-  border-radius: 10px;
-   
- ion-label {
- font-size: 18px;
-  font-family: PoppinsMed;
-  font-weight: 600;
-  letter-spacing: 1px;
- 
- }
-}
-
-ion-header {
- 
-  margin-bottom: 40px;
- 
-  ion-toolbar {
- 
-    display: flex;
-    
-    ion-button {
-       float: right;
-      
-    }
-  }
   
-  .logo {
-    margin-top: 40px;
-    height: 100px;
-    display: flex;
-      justify-content: center;
-     
-
-    img {
-      max-height: 100%;
-
-    }
-  }
-}
-
-ion-icon {
-  height: 36px;
-  width: 36px;
-  cursor: pointer;
-}
-
-.add-song-btn {
- width: 35px;
- height: 35px;
- cursor: pointer;
-}
-
-ion-list {
-  padding: 10px;
-
+  background-image: linear-gradient(-90deg,
+      #da53ff 0%,
+  #a653ff 15%,
+      #57a8f3 50%,
+      #2f61df 100%);
+ 
+ 
+  height: 30px;
   ion-label {
     font-family: PoppinsLight;
-      cursor: pointer;
+    font-size: 18px;
+  
+    letter-spacing: .8px;
+  }
+ 
+   
+}
+ 
 
-     
+ion-content {
+    --offset-bottom: auto !important;
+      --overflow: hidden;
+      overflow: auto;
+    
+      &::-webkit-scrollbar {
+        display: none;
+      }
+  h1 {
+    font-size: 16px;
+    font-family: PoppinsReg;
+  }
+
+  .logo {
+    padding: 20px;
+  
+    height: 30vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    img {
+      
+     max-height: 90%;
+    }
   }
 }
 
-ion-button {
+ion-fab {
+ 
+ right: 5px;
+ 
+}
+
+.play-button {
+  height: 28px;
+  width: 28px;
+  cursor: pointer;
+  margin: 0px;
   margin-right: 20px;
 }
 
-ion-footer {
-  ion-toolbar {
-    ion-row {
+.add-song-btn {
+  width: 28px;
+  height: 28px;
+  cursor: pointer;
+    
+}
 
-  
-          .progress-bar {
-            background-color: rgb(48, 48, 48);
-            border-radius: 30px;
-            margin: 0 auto;
-            padding: 0px 10px;
-          }
-          .active-title-text {
-            margin: 0;
-            padding: 15px;
-            font-size: 18px;
-            font-family: PoppinsReg;
-          }
-          .active-artist-text {
-            margin: 0;
-            padding: 0;
-            font-weight: lighter;
-            font-family: PoppinsLight;
-            margin-top: -24px;
-            padding-bottom: 5px;
-            color: #989898;
-          }
-          .player-btns-container {
-            
-                margin: 0 auto;
-                padding: 10px;
-                ion-button {
-                  ion-icon {
-                    height: 30px;
-                    width: 30px;
-                  }
-                }
-          }
-       
+ion-list {
+  margin: 0px;
+  padding: 0px;
+  ion-label {
+    font-family: PoppinsLight;
+    cursor: pointer;
+
+    h2 {
+      font-size: 14px;
+    }
+
+    p {
+      font-size: 13px;
     }
   }
 }
  
+ion-footer {
  
- 
+
+  ion-toolbar {
+    ion-row {
+
+
+      .progress-bar {
+
+        border-radius: 30px;
+        margin: 0 auto;
+        padding: 0px 0px;
+      }
+
+      ion-range {
+        --bar-height: 3px;
+        --knob-size: 15px;
+        --bar-border-radius: 8px;
+        padding: 0px;
+      }
+
+      .active-title-text {
+        margin: 0;
+        padding: 15px;
+        font-size: 18px;
+        font-family: PoppinsReg;
+      }
+
+      .active-artist-text {
+        margin: 0;
+        padding: 0;
+        font-weight: lighter;
+        font-family: PoppinsLight;
+        margin-top: -24px;
+        padding-bottom: 5px;
+        color: #989898;
+      }
+
+      .player-btns-container {
+
+        margin: 0 auto;
+        padding: 0px;
+
+        ion-button {
+          ion-icon {
+            height: 22px;
+            width: 22px;
+          }
+        }
+      }
+
+    }
+  }
+}

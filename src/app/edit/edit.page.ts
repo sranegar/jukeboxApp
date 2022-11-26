@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
+import { NavController } from '@ionic/angular';
 import { FormGroup, FormBuilder } from '@angular/forms';
 import { FirestoreService } from '../services/data/firestore.service';
 
@@ -16,6 +17,7 @@ export class EditPage implements OnInit {
     private router: Router,
     public fb: FormBuilder,
     private firestoreService: FirestoreService,
+    private navCtrl: NavController,
   ) {
     this.id = this.actRoute.snapshot.paramMap.get('id');
     this.firestoreService.getSongDetail(this.id).subscribe(res => {
@@ -37,5 +39,8 @@ export class EditPage implements OnInit {
         this.router.navigate(['/home']);
       })
       .catch(error => console.log(error));
+  }
+  navigateBack() {
+    this.navCtrl.back();
   }
 }

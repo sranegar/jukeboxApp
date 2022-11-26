@@ -1,66 +1,43 @@
 ion-title {
     --color: rgb(121, 121, 121);
-    font-size: 18px;
-    padding: 20px 10px;
-    text-align: center;
-    text-transform: uppercase;
-    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    
+    
+        text-align: center;
+        text-transform: uppercase;
+        font-family: Poppins;
 }
 
-ion-list-header {
-    background-image: linear-gradient(-90deg,
-            #ff53c8,
+ ion-header {
 
-            #6e57f3);
-    text-transform: uppercase;
-    border-radius: 10px;
+     margin-bottom: 20px;
 
-    ion-label {
-        font-size: 18px;
-        font-family: PoppinsMed;
-        font-weight: 600;
-        letter-spacing: 1px;
-    }
-}
-
-ion-header {
-
-    margin-bottom: 40px;
-
-    ion-toolbar {
-
-        display: flex;
-
-        ion-button {
-            float: right;
-
-        }
-    }
-
-    .logo {
-        margin-top: 40px;
-        height: 100px;
-        display: flex;
-        justify-content: center;
-
-
-        img {
-            max-height: 100%;
-
-        }
-    }
-}
+ }
 
 form {
-    max-width: 90%;
-    margin: 0 auto;
 
-    h2 {
+    margin: 0 auto;
+    padding: 0px;
+
+    h3 {
         text-transform: uppercase;
         text-align: center;
+        font-size: 20px;
+        font-family: Poppins;
+    }
+
+    ion-label {
+        font-family: PoppinsLight;
+        font-size: 16px;
+    }
+
+    ion-input {
+        font-size: 14px;
+        letter-spacing: 1px;
+        font-family: PoppinsLight;
+        color: #989898;
     }
 }
 
 .edit-btn {
-    margin-top: 10px;
+    margin-top: 20px;
 }

@@ -1,5 +1,6 @@
 <ion-header>
   <ion-toolbar>
+ 
     <ion-buttons slot="start">
       <ion-button>
         <ion-icon slot="icon-only" name="arrow-back-outline"></ion-icon>
@@ -9,30 +10,30 @@
 
       <ion-menu-button menu="main-menu"></ion-menu-button>
     </ion-buttons>
+    
   </ion-toolbar>
-  <div class="logo"><img src="../../assets/SVG/LOGO.svg" alt="Logo" /></div>
+ 
 </ion-header>
 
-<ion-content [fullscreen]="true">
-  <!--Song List-->
-
-  <!--Header-->
-  <ion-item lines="full">
-    <ion-label>
-      <h1>Song Library</h1>
-    </ion-label>
-    <ion-buttons>
-      <ion-button routerLink="/create">
-        <ion-icon class="add-song-btn" name="add-circle-sharp" color="primary"></ion-icon>
-      </ion-button>
-    </ion-buttons>
-  </ion-item>
-
+<ion-content >
+ <div class="logo"><img src="assets/SVG/LOGO.svg" alt="Logo"></div>
+ 
+  
   <!--Item-->
   <ion-list>
+      <ion-fab vertical="top" horizontal="end" slot="fixed">
+        <ion-fab-button size="small" routerLink="/create">
+          <ion-icon name="add"></ion-icon>
+        </ion-fab-button>
+      </ion-fab>
+    <ion-list-header>
+      <ion-label>
+        Songs Library
+      </ion-label>
+    </ion-list-header>
     <ion-item *ngFor="let song of songList | async">
-      <ion-icon slot="start" (click)="start(song)" [name]="song == activeSong ? 'play-circle' : 'play-circle-outline'"
-        [style.color]="song == activeSong ? '#2fdf75' : '#989898'"></ion-icon>
+      <ion-icon class="play-button" slot="start" (click)="start(song)" [name]="song == activeSong ? 'play-circle' : 'play-circle-outline'"
+        [style.color]="song == activeSong ? '#2fdf75' : '#989898'" ></ion-icon>
       <ion-label routerLink="/detail/{{song.id}}">
         <h2 [style.color]="song == activeSong ? '#2fdf75' : 'white'"
           [style.font-weight]="song == activeSong ? '900' : '300'">{{song.name}}</h2>
@@ -45,17 +46,20 @@
       </ion-item-options> -->
   </ion-list>
 </ion-content>
+
+
+
 <ion-footer>
   <ion-toolbar >
     <ion-row>
       <ion-col size="12" class="ion-text-center">
-         <h2 class="active-title-text">{{activeSong ? activeSong.name : null}}</h2>
+         <h2 class="active-title-text">{{activeSong ? activeSong.name : undefined}}</h2>
       </ion-col>
       <ion-col size="12" class="ion-text-center">
         <p class="active-artist-text">{{activeSong ? activeSong.artist : null}}</p>
       </ion-col>
-      <ion-col class="ion-text-center progress-bar" size="5" >
-        <ion-range #range [(ngModel)]="progress" max="100" color="secondary" (touchend)="seek()" (mouseup)="seek()"></ion-range>
+      <ion-col class="ion-text-center progress-bar" size="8" >
+        <ion-range #range [(ngModel)]="progress" max="100" color="secondary" (touchend)="seek()" (mouseup)="seek()" [pin]="true"></ion-range>
       </ion-col>
       <ion-col size="12" class="ion-text-center player-btns-container">
         <ion-button fill="clear" (click)="prev()" color="light">
