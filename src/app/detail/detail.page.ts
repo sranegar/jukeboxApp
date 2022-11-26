@@ -31,9 +31,10 @@ export class DetailPage implements OnInit {
     id: string,
     name: string,
     artist: string,
+    album: string,
     file: string
   ): Promise<void> {
-    const song = { id, name, artist, file };
+    const song = { id, name, artist, album, file };
     const alert = await this.alertController.create({
       message: `Are you sure you want to delete ${name} by ${artist}?`,
       buttons: [

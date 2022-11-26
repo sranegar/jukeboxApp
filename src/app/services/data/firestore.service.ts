@@ -11,15 +11,19 @@ import {
   deleteDoc,
   updateDoc,
 } from '@angular/fire/firestore';
+
 import { Observable } from 'rxjs';
 import { Song } from '../../models/song.interface';
-
+ 
 @Injectable({
   providedIn: 'root',
 })
 export class FirestoreService {
-  constructor(private firestore: Firestore) {}
+ 
+  constructor(private firestore: Firestore ) {}
 
+  
+ 
   createSong(song: Song) {
     const songsRef = collection(this.firestore, 'songs');
     return addDoc(songsRef, song);
@@ -42,7 +46,7 @@ export class FirestoreService {
   }
   updateSong(id, song: Song) {
     const songsRef = doc(this.firestore, `songs/${id}`)
-    return updateDoc(songsRef, {name: song.name, artist: song.artist, file: song.file})
+    return updateDoc(songsRef, {name: song.name, artist: song.artist, album: song.album, file: song.file})
     
   }
 }

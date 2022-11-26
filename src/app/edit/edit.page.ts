@@ -29,6 +29,7 @@ export class EditPage implements OnInit {
     this.updateSongForm = this.fb.group({
       name: [''],
       artist: [''],
+      album: [''],
       file: ['']
     })
     console.log(this.updateSongForm.value);

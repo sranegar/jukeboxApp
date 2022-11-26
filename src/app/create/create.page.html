@@ -33,10 +33,17 @@
       </ion-input>
     </ion-item>
 
+    <ion-item>
+      <ion-label position="floating">Album Name</ion-label>
+      <ion-input formControlName="albumName" type="text" placeholder="What ablum is this song on?">
+      </ion-input>
+    </ion-item>
+
    
     <ion-item>
       <ion-label position="floating">File (.mp3)</ion-label>
-      <ion-input formControlName="fileName" type="text"  placeholder="Enter file path">
+      <ion-input formControlName="fileName" type="file"  placeholder="Enter file path" (change)="firestoreService.uploadFile($event)">
+        
       </ion-input>
     </ion-item>
 

@@ -16,6 +16,7 @@ export class HomePage implements OnInit {
   player: Howl = null;
   isPlaying = false;
   progress = 0;
+ 
   @ViewChild('range', {static: false}) range: IonRange;
 
   public songs = [];
@@ -34,18 +35,19 @@ export class HomePage implements OnInit {
     if (this.player) {
       this.player.stop();
     }
+    
     this.player = new Howl({
       src: [song.file],
       html5: true,
       onplay: () => {
-        console.log('on play')
         this.isPlaying = true;
         this.activeSong = song;
         this.updateProgress();
+       
         
       },
       onend: () => {
-          console.log('on end');
+
       }
     });
     this.player.play();
