@@ -15,7 +15,7 @@
 </ion-header>
 
 <ion-content>
-  <form [formGroup]="createSongForm" (submit)="createSong()" class="add-song-form">
+  <form [formGroup]="createSongForm" (submit)="addNewSong()" class="add-song-form">
       <!--Header-->
      
           <h3  class="form-header">Enter Details</h3>
@@ -42,7 +42,7 @@
    
     <ion-item>
       <ion-label position="floating">File (.mp3)</ion-label>
-      <ion-input formControlName="fileName" type="text"  placeholder="Enter file path">
+      <ion-input formControlName="fileName" type="file" (change)="chooseFile($event)" placeholder="Enter file path">
       </ion-input>
     </ion-item>
 
