@@ -26,6 +26,11 @@
 @import "~@ionic/angular/css/flex-utils.css";
 
   @font-face {
+      font-family: Poppins;
+      src: url(./assets/fonts/Poppins-Regular.ttf)
+  }
+
+  @font-face {
       font-family: PoppinsReg;
       src: url(./assets/fonts/Poppins-Regular.ttf)
   }

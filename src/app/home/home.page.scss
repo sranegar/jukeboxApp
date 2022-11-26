@@ -57,31 +57,37 @@ ion-content {
  
 
 .play-button {
-  height: 28px;
-  width: 28px;
+  height: 36px;
+  width: 36px;
   cursor: pointer;
   margin: 0px;
   margin-right: 20px;
 }
 
-.add-song-btn {
-  width: 28px;
-  height: 28px;
-  cursor: pointer;
-    
-}
+ 
 
 ion-list {
   margin: 5px;
   padding: 5px;
   
- 
+  ion-label {
+    font-family: PoppinsLight;
+    cursor: pointer;
+
+    h2 {
+      font-size: 14px;
+    }
+
+    p {
+      font-size: 13px;
+    }
+  }
 }
- .ion-item {
-  font-family: Poppins;
-  font-variant-caps: all-petite-caps;
-  font-size: 20px;
- }
+    .ion-item {
+      font-family: Poppins;
+      font-variant-caps: all-petite-caps;
+      font-size: 20px;
+    }
 ion-footer {
  
 
