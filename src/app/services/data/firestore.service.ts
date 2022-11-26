@@ -31,13 +31,13 @@ export class FirestoreService {
   async uploadFile(id: string, f) {
     const fileName = f.name;
     const path = `mp3/${fileName}`;
-    console.log(path)
     const storageRef = ref(this.storage, path);
     try {
       await uploadBytes(storageRef, f);
       const mp3Url = await getDownloadURL(storageRef);
       const songDocRef = doc(this.firestore, `songs/${id}`);
       await updateDoc(songDocRef, { file: mp3Url });
+      
       return true;
     } catch (e) {
       console.log('Upload mp3 file error:', e);

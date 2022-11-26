@@ -37,7 +37,7 @@
 
       <ion-item>
         <ion-label position="stacked">Song File</ion-label>
-        <ion-input formControlName="file" type="text"></ion-input>
+        <ion-input formControlName="file" type="file" (change)="chooseFile($event)"></ion-input>
       </ion-item>
 
       <ion-button class="edit-btn" expand="block" type="submit" [disabled]="!updateSongForm.valid">
