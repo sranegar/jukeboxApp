@@ -35,7 +35,7 @@ export class EditPage implements OnInit {
       album: [''],
       file: [''],
     });
-    console.log(this.updateSongForm.value);
+   
   }
   chooseFile(event) {
     this.selectedFile = event.target.files[0];
