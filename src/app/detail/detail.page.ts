@@ -20,41 +20,40 @@ export class DetailPage implements OnInit {
 
   ngOnInit() {
     const songId = this.route.snapshot.paramMap.get('id');
-   
-    
+
     this.song = this.firestoreService.getSongDetail(songId);
-    this.firestoreService.getSongDetail(songId).subscribe(song => {
+    this.firestoreService.getSongDetail(songId).subscribe((song) => {
       this.song = song;
-    })
- 
-  
+    });
   }
 
-  async deleteSong(id: string, name: string, artist: string, file: string): Promise<void> {
-    const song = {id, name, artist, file}
+  async deleteSong(
+    id: string,
+    name: string,
+    artist: string,
+    file: string
+  ): Promise<void> {
+    const song = { id, name, artist, file };
     const alert = await this.alertController.create({
-      
-        message: `Are you sure you want to delete ${name} by ${artist}?`,
-        buttons: [
-          {
-            text: 'Cancel',
-            role: 'cancel',
-            handler: () => {
-              console.log(`Cancel deleting: ${name} by ${artist}`);
-            },
+      message: `Are you sure you want to delete ${name} by ${artist}?`,
+      buttons: [
+        {
+          text: 'Cancel',
+          role: 'cancel',
+          handler: () => {
+            console.log(`Cancel deleting: ${name} by ${artist}`);
           },
-          {
-            text: 'Okay',
-            handler: () => {
-              this.firestoreService.deleteSong(song).then(() => {
-                this.router.navigateByUrl('/home');
-              });
-            },
+        },
+        {
+          text: 'Okay',
+          handler: () => {
+            this.firestoreService.deleteSong(song).then(() => {
+              this.router.navigateByUrl('/home');
+            });
           },
-        ],
-      });
+        },
+      ],
+    });
     await alert.present();
-    
   }
- 
 }

@@ -15,9 +15,6 @@ export class AppComponent {
     private router: Router
   ) {}
 
-  async logoutUser() {
-    await this.authService.logout();
-      this.router.navigateByUrl('/login');
-    
-  }
+ 
+ 
 }

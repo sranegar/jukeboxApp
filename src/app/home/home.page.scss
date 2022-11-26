@@ -54,11 +54,7 @@ ion-content {
   }
 }
 
-ion-fab {
  
- right: 5px;
- 
-}
 
 .play-button {
   height: 28px;
@@ -76,8 +72,9 @@ ion-fab {
 }
 
 ion-list {
-  margin: 0px;
-  padding: 0px;
+  margin: 5px;
+  padding: 5px;
+  
   ion-label {
     font-family: PoppinsLight;
     cursor: pointer;

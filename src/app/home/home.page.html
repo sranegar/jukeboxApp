@@ -2,8 +2,8 @@
   <ion-toolbar>
  
     <ion-buttons slot="start">
-      <ion-button>
-        <ion-icon slot="icon-only" name="arrow-back-outline"></ion-icon>
+      <ion-button routerLink="/create">
+        <ion-icon slot="icon-only" name="add"></ion-icon>
       </ion-button>
     </ion-buttons>
     <ion-buttons slot="end">
@@ -21,11 +21,7 @@
   
   <!--Item-->
   <ion-list>
-      <ion-fab vertical="top" horizontal="end" slot="fixed">
-        <ion-fab-button size="small" routerLink="/create">
-          <ion-icon name="add"></ion-icon>
-        </ion-fab-button>
-      </ion-fab>
+    
     <ion-list-header>
       <ion-label>
         Songs Library
