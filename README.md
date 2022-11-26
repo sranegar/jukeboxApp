@@ -6,7 +6,10 @@ _PWA application that integrates Firebase with Ionic Angular_
 - Ionic Lab for optimal testing
 - User feedback 
 - Add, view, remove, and update songs
-- Plays music! 🎶 
+- Press "Play Circle" to play song  🎶 
+- Slide song left to view song details
+- Use music player widget to play, pause, or skip song
+- Scan song by dragging progress bar
 
 https://n423-slr.web.app/
 
